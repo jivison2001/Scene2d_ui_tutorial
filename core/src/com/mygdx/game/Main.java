@@ -38,6 +38,8 @@ public class Main extends Game {
 	
 	@Override
 	public void dispose () {
+		font.dispose();
 		batch.dispose();
+		this.getScreen().dispose();
 	}
 }
