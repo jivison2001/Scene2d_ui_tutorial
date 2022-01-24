@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -19,9 +20,12 @@ public class Main extends Game {
 	public SpriteBatch batch;
 
 	public BitmapFont font;
+
+	public AssetManager assets;
 	
 	@Override
 	public void create () {
+		assets = new AssetManager();
 		batch = new SpriteBatch();
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, 480,720);
@@ -40,6 +44,7 @@ public class Main extends Game {
 	public void dispose () {
 		font.dispose();
 		batch.dispose();
+		assets.dispose();
 		this.getScreen().dispose();
 	}
 }
