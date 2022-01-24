@@ -30,7 +30,7 @@ public class SplashScreen implements Screen {
         this.stage = new Stage(new FitViewport(Main.V_WIDTH,Main.V_HEIGHT,app.camera));
         Gdx.input.setInputProcessor(stage);
 
-        Texture splashTex = new Texture(Gdx.files.internal("image.png"));
+        Texture splashTex = app.assets.get("image.png", Texture.class);
         splashImg = new Image(splashTex);
 
         splashImg.setPosition(stage.getWidth()/2 - 32,stage.getHeight()/2 - 32);
@@ -69,7 +69,7 @@ public class SplashScreen implements Screen {
         stage.draw();
 
         app.batch.begin();
-        app.font.draw(app.batch, "Splashscreen!",120,120);
+        app.font.draw(app.batch, "Screen: SPLASH",20,20);
         app.batch.end();
     }
 

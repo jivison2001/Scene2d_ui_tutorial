@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.mygdx.game.Screens.LoadingScreen;
 import com.mygdx.game.Screens.SplashScreen;
 
 public class Main extends Game {
@@ -31,7 +32,7 @@ public class Main extends Game {
 		camera.setToOrtho(false, 480,720);
 		font = new BitmapFont();
 
-		this.setScreen(new SplashScreen(this));
+		this.setScreen(new LoadingScreen(this));
 	}
 
 	@Override
