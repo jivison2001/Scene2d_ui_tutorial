@@ -5,6 +5,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.MathUtils;
 import com.mygdx.game.Main;
@@ -26,6 +27,7 @@ public class LoadingScreen implements Screen {
         //loads image as a texture class to assets
         app.assets.load("image.png", Texture.class);
         app.assets.load("badlogic.jpg", Texture.class);
+        app.assets.load("ui/uiskin.atlas", TextureAtlas.class);
     }
 
     @Override

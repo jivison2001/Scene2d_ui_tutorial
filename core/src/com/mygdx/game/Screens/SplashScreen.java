@@ -1,6 +1,7 @@
 package com.mygdx.game.Screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -60,6 +61,10 @@ public class SplashScreen implements Screen {
         app.batch.begin();
         app.font.draw(app.batch, "Screen: SPLASH",20,20);
         app.batch.end();
+
+        if(Gdx.input.isKeyPressed(Input.Keys.SPACE)){
+            app.setScreen(app.mainMenuScreen);
+        }
     }
 
     @Override
