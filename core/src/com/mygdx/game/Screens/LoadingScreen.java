@@ -18,10 +18,7 @@ public class LoadingScreen implements Screen {
 
     public LoadingScreen(final Main app){
         this.app = app;
-
         this.shapeRenderer = new ShapeRenderer();
-        this.progress = 0f;
-        queueAssets();
     }
 
     private void queueAssets() {
@@ -31,6 +28,8 @@ public class LoadingScreen implements Screen {
 
     @Override
     public void show() {
+        this.progress = 0f;
+        queueAssets();
         System.out.println("LOADING");
     }
 
