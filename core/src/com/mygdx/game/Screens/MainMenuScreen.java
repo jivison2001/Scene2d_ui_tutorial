@@ -15,12 +15,6 @@ public class MainMenuScreen implements Screen {
 
     public MainMenuScreen(final Main app){
         this.app = app;
-        queueAssets();
-    }
-
-    private void queueAssets() {
-        //loads image as a texture class to assets
-        app.assets.load("image.png", Texture.class);
     }
 
     @Override

@@ -19,11 +19,13 @@ public class LoadingScreen implements Screen {
     public LoadingScreen(final Main app){
         this.app = app;
         this.shapeRenderer = new ShapeRenderer();
+        queueAssets();
     }
 
     private void queueAssets() {
         //loads image as a texture class to assets
         app.assets.load("image.png", Texture.class);
+        app.assets.load("badlogic.jpg", Texture.class);
     }
 
     @Override
@@ -58,8 +60,8 @@ public class LoadingScreen implements Screen {
     private void update(float delta) {
         progress = MathUtils.lerp(progress,app.assets.getProgress(),0.1f);
         //keeps returning false until all the assets have finished loading
-        if(app.assets.update() && progress > 0.9999){
-            app.setScreen(new SplashScreen(app));
+        if(app.assets.update() && progress > 0.9999f){
+            app.setScreen(app.splashScreen);
         }
     }
 

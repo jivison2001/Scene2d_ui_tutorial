@@ -28,15 +28,6 @@ public class SplashScreen implements Screen {
     public SplashScreen(final Main app){
         this.app = app;
         this.stage = new Stage(new FitViewport(Main.V_WIDTH,Main.V_HEIGHT,app.camera));
-        Gdx.input.setInputProcessor(stage);
-
-        Texture splashTex = app.assets.get("image.png", Texture.class);
-        splashImg = new Image(splashTex);
-
-        splashImg.setPosition(stage.getWidth()/2 - 32,stage.getHeight()/2 - 32);
-        splashImg.setOrigin(stage.getWidth()/2 - 32,stage.getHeight()/2 - 32);
-        stage.addActor(splashImg);
-
     }
 
     //called whenever the game sets the screen to this object
@@ -44,15 +35,13 @@ public class SplashScreen implements Screen {
     @Override
     public void show() {
         System.out.println("Show");
+        Gdx.input.setInputProcessor(stage);
 
-        splashImg.setPosition(stage.getWidth() / 2 - 32, stage.getHeight() / 2 - 32);
-
-        //this one line does what the two lines below does
-        //splashImg.addAction(sequence(alpha(0.0f), fadeIn(1.0f)));
-        /*
-        splashImg.addAction(alpha(0f));
-        splashImg.addAction(fadeIn(1.0f));
-         */
+        Texture splashTex = app.assets.get("image.png", Texture.class);
+        splashImg = new Image(splashTex);
+        splashImg.setPosition(stage.getWidth()/2 - 32,stage.getHeight()/2 - 32);
+        splashImg.setOrigin(stage.getWidth()/2 - 32,stage.getHeight()/2 - 32);
+        stage.addActor(splashImg);
         splashImg.addAction(sequence(alpha(0), scaleTo(0.1f,0.1f),
                 parallel(fadeIn(2f, Interpolation.pow5),
                         scaleTo(2f,2f,2.5f, Interpolation.pow5),

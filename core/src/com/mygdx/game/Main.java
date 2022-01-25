@@ -57,6 +57,9 @@ public class Main extends Game {
 		font.dispose();
 		batch.dispose();
 		assets.dispose();
+		loadingScreen.dispose();
+		splashScreen.dispose();
+		mainMenuScreen.dispose();
 		this.getScreen().dispose();
 	}
 }
